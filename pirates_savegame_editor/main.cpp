@@ -43,10 +43,13 @@ int main(int argc, char **argv)
     set_up_decoding();
     
     // Setting the default pirates savegame dir.
-    string env_user = "USER_NOT_DEFINED";
-    if(const char* env_p = std::getenv("USER")) { env_user = env_p; }
-    save_dir = "/Users/" + env_user + "/Library/Preferences/Firaxis Games/Sid Meier's Pirates!/My Games/Game";
-    
+    if(const char* env_save_dir = std::getenv("SAVE_DIR")) {
+        save_dir = env_save_dir;
+    } else {
+        string env_user = "USER_NOT_DEFINED";
+        if(const char* env_p = std::getenv("USER")) { env_user = env_p; }
+        save_dir = "/Users/" + env_user + "/Library/Preferences/Firaxis Games/Sid Meier's Pirates!/My Games/Game";
+    }
    
     if (opt.count("auto") && opt.count("splice")) throw invalid_argument("Do not combine -splice and -auto");
     // -auto is implied by -not and by using commas in -donor.
