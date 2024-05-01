@@ -11,8 +11,8 @@
 #include <getopt.h>
 #include <regex>
 #include <cstdio>
-#include "PiratesFiles.hpp"
-#include "PGetoptLong.hpp"
+#include "../PiratesFiles.hpp"
+#include "../PGetoptLong.hpp"
 
 // This file handles processing the input switches.
 
