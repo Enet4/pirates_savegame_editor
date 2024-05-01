@@ -8,6 +8,8 @@
 #ifndef PGetoptLong_hpp
 #define PGetoptLong_hpp
 #include <map>
+#include <string>
+#include <vector>
 
 std::map<std::string, std::string> PGetOptions(int argc, char**argv, std::vector<std::string> switches);
 

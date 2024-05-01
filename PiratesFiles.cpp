@@ -17,6 +17,7 @@
 #include <vector>
 #include <regex>
 #include <set>
+#include <cmath>
 #include "boost/filesystem.hpp"
 
 // Filename suffixes
@@ -445,7 +446,7 @@ void auto_splice(std::string infile, std::string donorfiles, std::string outfile
         PstFile outPst;
         
         // Weird sort order inherited from perl version.
-        int flip = pow(2, oi);
+        int flip = std::pow(2, oi);
         bool include = true;
         int this_splice_count = 0;
         map<std::string, set <std::string > > splice_sub_lines;
